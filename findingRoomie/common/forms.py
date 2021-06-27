@@ -10,8 +10,7 @@ class RegisterForm(UserCreationForm):
         fields = ['username','password1','password2','nickname','gender','age','school','major',
         'studentID','sleep_habit','sleep_time','cleanliness',
         'cook','smoke','budget','hope_area','introduction',
-        'profile_active',
-        # 'name','profile_img'
+        'profile_active','profile_img',
         ]
         widgets = {
             'gender':forms.RadioSelect(),

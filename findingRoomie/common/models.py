@@ -9,7 +9,7 @@ COOK_CHOICE = (('J','J'),('K','K'),('L','L'),)
 BUDGET_CHOICE = (('M','M'),('N','N'),('O','O'),)
 
 class UserInfo(AbstractUser):
-    #profile_img = models.ImageField(upload_to ="common/", blank=True, null =True)
+    profile_img = models.ImageField(upload_to ="common/", blank=True, null =True)
     nickname = models.CharField(max_length=50)
     gender = models.CharField(max_length=10,choices=GENDER_CHOICE,default='W')
     age = models.IntegerField(default=0)

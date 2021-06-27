@@ -11,6 +11,7 @@
     {% if user.is_authenticated %}
     
     안녕하세요, {{user.username}} 님!
+    <img src="{{user.profile_img.url}}" alt="">
     {%endif%}
     <a href="{%url 'login'%}">login</a>
     <a href="{%url 'logout'%}">logout</a>
