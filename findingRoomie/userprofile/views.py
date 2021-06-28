@@ -53,7 +53,7 @@ def search(request):
     q = request.POST.get('q', "") 
 
     if q:
-        variable_column = request.GET.get('fd_name')
+        variable_column = request.POST.get('fd_name')
         if variable_column=="major":
             users = users.filter(major__icontains=q)
         else :
