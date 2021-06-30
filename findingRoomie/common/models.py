@@ -23,5 +23,5 @@ class UserInfo(AbstractUser):
     smoke =  models.BooleanField(default=False)
     budget = models.CharField(max_length=10,choices=BUDGET_CHOICE,default='M')
     hope_area = models.CharField(max_length=50)
-    introduction = models.TextField()
+    introduction = models.CharField(max_length=100)
     profile_active = models.BooleanField(default=True)

@@ -21,16 +21,41 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    return redirect("home")
+    return redirect("login")
 
 def register_view(request):
     if request.method =='POST':
         form=RegisterForm(request.POST,request.FILES)
         if form.is_valid():
             user = form.save()
+            new_user = form.cleaned_data.get('username')
+
             login(request,user)
-        return redirect("home")
+        return redirect("login")
     else:
         form = RegisterForm()
         return render(request,'register.html',{'form':form})
 
+def make_profile(request):
+    if request.method =='POST':
+        form=RegisterForm(request.POST,request.FILES)
+        if form.is_valid():
+            user = form.save()
+            new_user = form.cleaned_data.get('username')
+
+            login(request,user)
+        return redirect("login")
+    else:
+        form = RegisterForm()
+        return render(request,'makeProfile.html',{'form':form})
+        
+# def make_profile(request,pk):
+#     if request.method == 'POST':
+#         # 이미지 파일 수정 안되는거 오류 해결 필요
+#         form=CustomUserChangeForm(request.POST,instance=request.user,)
+#         if form.is_valid():
+#             form.save()
+#         return redirect("MyPage")
+#     else:
+#         form = CustomUserChangeForm(instance = request.user)
+#         return render(request,'makeProfile.html',{'form':form})
