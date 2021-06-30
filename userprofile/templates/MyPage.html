@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page</title>
+</head>
+<body>
+    <h1>My profile</h1>
+    <img src="{{context.profile_img}}">
+    <p>이름: {{context.username}}</p>
+    <p>닉네임: {{context.nickname}}</p>
+    <p>성별: {{context.gender}}</p>
+    <p>나이: {{context.age}}</p>
+    <p>학과: {{context.major}}</p>
+    <p>학번: {{context.studentID}}</p>
+    <p>소개: {{context.introduction}}</p>
+    <p>취침시간: {{context.sleep_time}}</p>
+    <p>취식습관: {{context.cook}}</p>
+    <p>흡연여부: {{context.smoke}}</p>
+    <p>예산: {{context.budget}}</p>
+    <p>희망 거주지역: {{context.hope_area}}</p>
+    <p>활동중: {{context.profile_active}}</p>
+
+    <a href="{%url 'edit' user.pk%}">update</a>
+
+</body>
+</html>
